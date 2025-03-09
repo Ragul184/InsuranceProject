@@ -1,5 +1,10 @@
 # Insurance Policies Web App
 
+## Live Demo
+- **Frontend:** [Insurance Policies App](https://insurance-project-frontend.vercel.app/)
+- **Backend List Policies API:** [Insurance API](https://insuranceproject-backend.onrender.com/api/policies)
+- **Backend Server:** [Backend Service](https://insuranceproject-backend.onrender.com/)
+
 ## Overview
 This is a full-stack web application built with **Angular 19 as the frontend** and **Node.js with Express using SQLite as the backend**. It allows users to:
 
@@ -38,6 +43,7 @@ This is a full-stack web application built with **Angular 19 as the frontend** a
    node index.js
    ```
    or
+   
    ```sh
    npm start
    ```
