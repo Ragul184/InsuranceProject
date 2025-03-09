@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>Insurance Policies</h1>
+
+  <div class="filters">
+    <mat-form-field>
+      <input matInput [(ngModel)]="filters.name" placeholder="Search name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="filters.minPremium" type="number" placeholder="Min Premium">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="filters.maxPremium" type="number" placeholder="Max Premium">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select [(ngModel)]="filters.type" placeholder="Policy Type">
+        <mat-option value="">All Policy Types</mat-option>
+        <mat-option value="Term Life">Term Life</mat-option>
+        <mat-option value="Health">Health</mat-option>
+        <mat-option value="Vehicle">Vehicle</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="filters.minCoverage" type="number" placeholder="Min Coverage">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="fetchPolicies()">Apply</button>
+  </div>
+
+  <mat-card>
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="premium">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Premium</th>
+        <td mat-cell *matCellDef="let policy">{{policy.premium}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let policy">{{policy.name}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+        <td mat-cell *matCellDef="let policy">{{policy.type}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="coverage">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Coverage</th>
+        <td mat-cell *matCellDef="let policy">{{policy.coverage}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
+  </mat-card>
+</div>
+<router-outlet />

@@ -1,0 +1,13 @@
+.filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+table {
+  background-color: rgb(203, 251, 255);
+  th {
+    background-color: rgba(130, 214, 233, 0.775);
+    font-weight: bold;
+  }
+}
