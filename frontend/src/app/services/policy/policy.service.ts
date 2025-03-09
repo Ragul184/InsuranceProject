@@ -8,6 +8,6 @@ export class PolicyService {
 
   constructor(private http: HttpClient) { }
   getPolicies(filters: any) {
-    return this.http.get('http://localhost:8080/api/policies', { params: filters });
+    return this.http.get('https://insuranceproject-backend.onrender.com/api/policies', { params: filters });
   }
 }
